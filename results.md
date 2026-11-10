@@ -26,3 +26,9 @@
 - Fine-tuning + augmentation: +5.07 points over the frozen baseline (EfficientNet-B0)
 - **Final model: ResNet-50.** +1.63 points over fine-tuned B0 on validation (~9 of 552 images),
   above my 0.5-point noise threshold. Trade-off: 5.7× larger (94.7 MB vs 16.5 MB), ~25% slower per epoch.
+
+   ## Day 4: Test set (evaluated once)
+   - Model: resnet50 | Test acc 92.45 % | Top-5 99.13 % | Macro F1 0.9239
+   - Cats 87.91 % | Dogs 94.61 %
+   - Baseline (frozen) test acc 84.71 % → fine-tuned 92.45 %  (+7.74 points)
+   - Most confused: American Pit Bull Terrier → 	Staffordshire Bull Terrier (26 images), Egyptian Mau → Bengal (16 images)
