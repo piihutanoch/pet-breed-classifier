@@ -1,5 +1,17 @@
 # Results
 
+## Summary
+| Version | Breeds | Test accuracy | Top-5 | Model |
+|---|---:|---:|---:|---|
+| v1 | 37 | 92.5% | 99.1% | ResNet-50 |
+| v2 | 137 | (after Day 4) | | |
+
+## v2 (137 breeds)
+...dataset section I gave you, then baseline / fine-tune / evaluation results as you get them...
+
+## v1 (37 breeds)
+...whatever is in results.md now, unchanged...
+
 ## Day 1: Data
 - Dataset: Oxford-IIIT Pet, 37 breeds (12 cats, 25 dogs)
 - Official splits: trainval 3,680 / test 3,669 (test untouched until Day 4)
