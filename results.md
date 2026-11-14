@@ -54,7 +54,12 @@ Photos per breed after cleaning: min 101 (Indie), max 250.
 - Indie photos come from Pinterest and are not redistributed in this repo.
 
 ### Day 2: Frozen baseline
-_pending_
+- EfficientNet-B0 (ImageNet weights), backbone frozen, new Linear(1280→137) head
+- Adam lr 1e-3, batch 32, 5 epochs, no augmentation
+- Trainable params: 175,497 of ~4.18M (~4%)
+- Best val accuracy: **75.50%** (epoch 5), ~112 s/epoch on Colab T4
+- Still improving at epoch 5 (v1 plateaued at epoch 2)
+- v1 comparison: 88.41% on 37 classes → 75.50% on 137 classes
 
 ### Day 3: Fine-tuning
 _pending_
