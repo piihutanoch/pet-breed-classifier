@@ -62,7 +62,17 @@ Photos per breed after cleaning: min 101 (Indie), max 250.
 - v1 comparison: 88.41% on 37 classes → 75.50% on 137 classes
 
 ### Day 3: Fine-tuning
-_pending_
+- Same recipe as v1: augmentation, AdamW (backbone lr 1e-4, head lr 1e-3), cosine schedule, label smoothing 0.1, up to 12 epochs, early stopping (patience 3)
+
+| run        | backbone        | frozen | augmentation | val_acc (%) | best_epoch | sec_per_epoch | size_mb |
+|:-----------|:----------------|:-------|:-------------|------------:|-----------:|--------------:|--------:|
+| Baseline   | efficientnet_b0 | Yes    | No           |       75.50 |          5 |           120 |    17.0 |
+| Fine-tuned | efficientnet_b0 | No     | Yes          |       87.71 |         12 |           167 |    17.0 |
+| Fine-tuned | resnet50        | No     | Yes          |       88.66 |         12 |           209 |    95.5 |
+
+- Fine-tuning + augmentation: +12.21 points over the frozen baseline (v1: +5.07)
+- **Final model: ResNet-50.** +0.95 points over fine-tuned B0 (~36 of 3,784 images), above the 0.5-point threshold
+- Neither model early-stopped; most gains came by epoch 4 (B0: 85.7% → 87.7% over epochs 5–12)
 
 ### Day 4: Test set
 _pending_
