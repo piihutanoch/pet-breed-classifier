@@ -3,8 +3,9 @@
 ## Summary
 | Version | Breeds | Photos | Test accuracy | Top-5 | Model |
 |---|---:|---:|---:|---:|---|
-| v2 | 137 (12 cat, 125 dog) | 25,216 | _pending_ | _pending_ | _pending_ |
+| v2 | 137 (12 cat, 125 dog) | 25,216 | 89.03% | 98.52% | ResNet-50 |
 | v1 | 37 (12 cat, 25 dog) | 7,349 | 92.45% | 99.13% | ResNet-50 |
+
 
 v1 is preserved in the GitHub release `v1_37_breeds` (code + `model.pt`).
 
@@ -74,9 +75,23 @@ Photos per breed after cleaning: min 101 (Indie), max 250.
 - **Final model: ResNet-50.** +0.95 points over fine-tuned B0 (~36 of 3,784 images), above the 0.5-point threshold
 - Neither model early-stopped; most gains came by epoch 4 (B0: 85.7% → 87.7% over epochs 5–12)
 
-### Day 4: Test set
-_pending_
 
+### Day 4: Test set (evaluated once)
+- Model: resnet50 | Test acc 89.03% | Top-5 98.52% | Macro F1 0.8855 | 3,784 test images
+- Cats 94.38% | Dogs 88.48% (reversed from v1, where dogs were higher)
+- Baseline (frozen) test acc 74.47% → fine-tuned 89.03% (+14.56 points; v1: +7.74)
+- Test acc slightly above val (88.66%), unlike v1 (−2.7 points): larger val set, less selection bias
+
+| Source | Test images | Accuracy | Top-5 |
+|---|---:|---:|---:|
+| Oxford-IIIT Pet | 915 | 93.77% | 99.23% |
+| Stanford Dogs | 2,853 | 87.66% | 98.32% |
+| Indie | 16 | 62.50% | 93.75% |
+
+- Stanford is *lower* than Oxford, so no sign that ImageNet pretraining inflates its score. Its breeds are simply harder.
+- Hardest breeds: Eskimo Dog and Toy Poodle (59.09%), Siberian Husky (60.71%), Miniature Poodle (60.87%), Indie and Shih-Tzu (62.50%)
+- Most confused: Shih-Tzu → Lhasa (9), Siberian Husky → Eskimo Dog (7), poodle sizes (15 combined)
+- Confidence threshold 0.7: catches 67.2% of wrong predictions, flags 12.3% of correct ones, 95.6% accuracy on the rest
 ---
 
 ## v1 (37 breeds)
