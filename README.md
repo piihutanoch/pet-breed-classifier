@@ -76,7 +76,7 @@ dogs in v2 because the dog classes now include all 120 Stanford breeds, many of 
 
 ![Grad-CAM examples](assets/gradcam_examples.png)
 
-___ (where did the heatmaps focus, for the correct prediction and for the mistake?)
+For the correct prediction, the heatmap is centred on the animal's face, around the eyes and muzzle. For the Shih-Tzu → Lhasa mistake, it focuses on the long hair around the dog's face, the feature both breeds share, which explains why they are easily confused.
 
 ## Confidence levels
 
