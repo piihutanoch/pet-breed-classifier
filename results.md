@@ -94,6 +94,14 @@ Photos per breed after cleaning: min 101 (Indie), max 250.
 - Confidence threshold 0.7: catches 67.2% of wrong predictions, flags 12.3% of correct ones, 95.6% accuracy on the rest
 ---
 
+### Day 5: App (Gradio, CPU)
+- Confidence threshold tuned on val (reject ≤5% of correct predictions): **0.45** (v1: 0.60)
+- Non-pet photos rejected: **28/28** (v1: 27/27)
+- Correct test pets wrongly rejected: **3.7%** (v1: 6.2%)
+- Highest non-pet confidence: 34.6%, closer to the threshold than in v1
+- Real-world check: Shih Tzu photo (not in the dataset) → v1: Havanese 67% (breed missing) → v2: **Shih-Tzu 95%**
+- Grad-CAM on CPU: under 1 s per image
+
 ## v1 (37 breeds)
 
 ### Day 1: Data
