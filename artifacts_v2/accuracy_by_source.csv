@@ -1,0 +1,4 @@
+source,n_test,accuracy,top5_acc
+oxford,915,0.9377,0.9923
+stanford,2853,0.8766,0.9832
+indie,16,0.625,0.9375

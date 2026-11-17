@@ -1,0 +1,6 @@
+{
+  "name": "resnet50",
+  "num_classes": 137,
+  "val_acc": 0.8866279069767442,
+  "threshold": 0.45
+}

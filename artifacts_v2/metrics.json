@@ -1,0 +1,14 @@
+{
+  "model": "resnet50",
+  "n_test": 3784,
+  "test_acc": 0.8903,
+  "top5_acc": 0.9852,
+  "macro_f1": 0.8855,
+  "cat_acc": 0.9438,
+  "dog_acc": 0.8848,
+  "baseline_test_acc": 0.7447,
+  "threshold": 0.45,
+  "nonpet_rejected": 28,
+  "nonpet_total": 28,
+  "pets_wrongly_rejected": 0.0368
+}
