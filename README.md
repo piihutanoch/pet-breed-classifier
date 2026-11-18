@@ -60,6 +60,7 @@ but the model covers the breeds real users actually have. v1 is preserved in the
 - **App:** a Gradio dashboard with live prediction, Grad-CAM, per-breed metrics and an error explorer. All metrics and plots are precomputed, so the app only runs single-image CPU inference (~1.4 s including Grad-CAM).
 
 ## Error analysis
+![Model performance and error explorer tabs](assets/demo_tabs.gif)
 
 | True breed | Predicted as | Test images |
 |---|---|---|
